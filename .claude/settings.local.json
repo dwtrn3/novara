@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cd /d D:\\\\Projects\\\\novara)",
+      "Bash(node -e \"console.log\\(require\\('./node_modules/next/package.json'\\).version\\)\")",
+      "Bash(node *)",
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(git push *)",
+      "Bash(git checkout *)",
+      "Bash(git remote *)",
+      "Bash(git config *)",
+      "Bash(gh auth *)",
+      "Bash(claude config *)",
+      "Bash(claude auth *)"
+    ]
+  }
+}
