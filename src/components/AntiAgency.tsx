@@ -8,7 +8,7 @@ const CARDS = [
   {
     num: "01",
     title: "The retainer trap",
-    body: "You sign for 12 months. Month one is strategy. Month two is 'building foundations'. You see results — if ever — right before renewal, when they need you to re-sign.",
+    body: "You sign for 12 months. Month one is strategy. Month two is 'building foundations'. You see results, if ever, right before renewal, when they need you to re-sign.",
   },
   {
     num: "02",
@@ -18,7 +18,7 @@ const CARDS = [
   {
     num: "03",
     title: "Vanity over revenue",
-    body: "Agencies optimise for metrics that look good in reports — impressions, followers, CPM. Not booked appointments. Not revenue. Not the number that actually matters to your clinic.",
+    body: "Agencies optimise for metrics that look good in reports: impressions, followers, CPM. Not booked appointments. Not revenue. Not the number that actually matters to your clinic.",
   },
 ];
 
@@ -82,8 +82,8 @@ export default function AntiAgency() {
             <p className="font-sans text-sm md:text-base leading-relaxed text-[#4a4a4a]">
               Most agencies win your business with a glossy deck, lock you into
               a 12-month retainer, then hand you off to a junior team you&apos;ve
-              never met. You get monthly PDF reports full of vanity metrics —
-              impressions, reach, &lsquo;brand awareness&rsquo; — while your actual revenue
+              never met. You get monthly PDF reports full of vanity metrics:
+              impressions, reach, &lsquo;brand awareness&rsquo;, while your actual revenue
               flatlines.
             </p>
             <p className="font-sans text-sm md:text-base leading-relaxed text-[#4a4a4a] mt-2">
@@ -150,7 +150,7 @@ export default function AntiAgency() {
               </p>
               <p className="font-serif italic text-xl md:text-2xl text-white leading-snug max-w-xl">
                 &ldquo;We don&apos;t take retainers. We don&apos;t hand you off. We sit inside
-                your clinic&apos;s growth — and we only win when you win.&rdquo;
+                your clinic&apos;s growth, and we only win when you win.&rdquo;
               </p>
             </div>
             <a

@@ -4,20 +4,20 @@ import Footer from "@/components/Footer";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Results & Case Studies — YRT by Novara π",
+  title: "Results & Case Studies | YRT by Novara π",
   alternates: { canonical: "/results" },
   description:
     "Real results from aesthetics clinics, IVF centres, dental practices, and private clinics. See how YRT by Novara π drives growth through paid ads, SEO, and web.",
   openGraph: {
-    title: "Results & Case Studies — YRT by Novara π",
+    title: "Results & Case Studies | YRT by Novara π",
     description:
       "Real results from aesthetics clinics, IVF centres, dental practices, and private clinics. See how YRT by Novara π drives growth through paid ads, SEO, and web.",
     type: "website",
-    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "Results & Case Studies — YRT by Novara π" }],
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "Results & Case Studies | YRT by Novara π" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Results & Case Studies — YRT by Novara π",
+    title: "Results & Case Studies | YRT by Novara π",
     description:
       "Real results from aesthetics clinics, IVF centres, dental practices, and private clinics. See how YRT by Novara π drives growth through paid ads, SEO, and web.",
     images: ["/opengraph-image"],
@@ -32,7 +32,7 @@ const CASES = [
     statLabel: "appointments",
     timeframe: "First 60 days",
     description:
-      "A Dubai-based aesthetics clinic was struggling to fill their appointment books despite a strong reputation. We rebuilt their paid social strategy from the ground up — new creative, tighter audience targeting, and a streamlined landing page. Within 60 days of going live, bookings had tripled.",
+      "A Dubai-based aesthetics clinic was struggling to fill their appointment books despite a strong reputation. We rebuilt their paid social strategy from the ground up: new creative, tighter audience targeting, and a streamlined landing page. Within 60 days of going live, bookings had tripled.",
     services: ["Paid Ads", "Landing Page"],
   },
   {
@@ -42,7 +42,7 @@ const CASES = [
     statLabel: "more leads",
     timeframe: "At 40% lower cost per lead",
     description:
-      "An established IVF centre in India needed to reduce their cost per enquiry while growing volume. By restructuring their Google Ads campaigns and introducing AEO-optimised content, we quadrupled lead volume — while simultaneously cutting the cost per lead by 40%.",
+      "An established IVF centre in India needed to reduce their cost per enquiry while growing volume. By restructuring their Google Ads campaigns and introducing AEO-optimised content, we quadrupled lead volume, while simultaneously cutting the cost per lead by 40%.",
     services: ["Paid Ads", "SEO & AEO"],
   },
   {
@@ -166,7 +166,7 @@ export default function ResultsPage() {
               Want results like these?
             </h2>
             <p className="font-sans text-sm text-white/70 leading-relaxed mb-10 max-w-md mx-auto">
-              Book a free 30-minute discovery call. No pitch decks, no retainer traps — just a
+              Book a free 30-minute discovery call. No pitch decks, no retainer traps, just a
               clear plan built around your clinic.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">

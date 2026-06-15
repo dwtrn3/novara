@@ -5,18 +5,18 @@ import LegalSection from "@/components/LegalSection";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Terms of Service — YRT by Novara π",
+  title: "Terms of Service | YRT by Novara π",
   alternates: { canonical: "/terms" },
   description: "Terms and conditions governing the use of YRT by Novara π services.",
   openGraph: {
-    title: "Terms of Service — YRT by Novara π",
+    title: "Terms of Service | YRT by Novara π",
     description: "Terms and conditions governing the use of YRT by Novara π services.",
     type: "website",
     images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "YRT by Novara π" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Terms of Service — YRT by Novara π",
+    title: "Terms of Service | YRT by Novara π",
     description: "Terms and conditions governing the use of YRT by Novara π services.",
     images: ["/opengraph-image"],
   },
@@ -51,7 +51,7 @@ export default function TermsPage() {
             <LegalSection title="Our services">
               <p>
                 YRT by Novara π provides growth marketing services including paid advertising, SEO and AEO,
-                website design and development, and related digital marketing services — primarily
+                website design and development, and related digital marketing services, primarily
                 for aesthetics clinics, IVF centres, dental practices, and private clinics.
               </p>
               <p>
@@ -72,7 +72,7 @@ export default function TermsPage() {
 
             <LegalSection title="Intellectual property">
               <p>
-                All content on this website — including text, graphics, logos, and design — is the
+                All content on this website, including text, graphics, logos, and design, is the
                 property of YRT by Novara π and is protected by applicable intellectual property laws.
                 You may not use our content without prior written consent.
               </p>
@@ -122,8 +122,8 @@ export default function TermsPage() {
             <LegalSection title="Contact">
               <p>
                 For any questions about these Terms, please contact us at{" "}
-                <a href="mailto:hello@novara.com" className="text-[#B07040] hover:underline">
-                  hello@novara.com
+                <a href="mailto:growth@yourevenueteam.com" className="text-[#B07040] hover:underline">
+                  growth@yourevenueteam.com
                 </a>.
               </p>
             </LegalSection>

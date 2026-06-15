@@ -7,6 +7,7 @@ const STATS = [
   { value: 400, prefix: "",  suffix: "+",  label: "Campaigns launched" },
   { value: 2,   prefix: "£", suffix: "M+", label: "Spent on high-performance ads" },
   { value: 4,   prefix: "",  suffix: "×",  label: "Average lead growth" },
+  { value: 30,  prefix: "",  suffix: "+",  label: "Clinics helped to grow" },
 ];
 
 const EASE = "cubic-bezier(0.16, 1, 0.3, 1)";
@@ -54,7 +55,7 @@ export default function Stats() {
 
   return (
     <section ref={ref} data-nav-light className="w-full" style={{ background: "#e8e5e0" }}>
-      <div className="grid grid-cols-2 md:grid-cols-4">
+      <div className="grid grid-cols-2 md:grid-cols-5">
         {STATS.map((stat, i) => (
           <div
             key={i}
@@ -63,6 +64,7 @@ export default function Stats() {
               "py-10 px-6 cursor-default select-none",
               i > 0 ? "border-l border-white/10" : "",
               i >= 2 ? "border-t border-white/10 md:border-t-0" : "",
+              i === STATS.length - 1 ? "col-span-2 md:col-span-1" : "",
             ].filter(Boolean).join(" ")}
             style={{
               opacity:    visible ? 1 : 0,

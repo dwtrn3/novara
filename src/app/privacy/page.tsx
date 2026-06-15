@@ -5,18 +5,18 @@ import LegalSection from "@/components/LegalSection";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy — YRT by Novara π",
+  title: "Privacy Policy | YRT by Novara π",
   alternates: { canonical: "/privacy" },
   description: "How YRT by Novara π collects, uses, and protects your personal data.",
   openGraph: {
-    title: "Privacy Policy — YRT by Novara π",
+    title: "Privacy Policy | YRT by Novara π",
     description: "How YRT by Novara π collects, uses, and protects your personal data.",
     type: "website",
     images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "YRT by Novara π" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Privacy Policy — YRT by Novara π",
+    title: "Privacy Policy | YRT by Novara π",
     description: "How YRT by Novara π collects, uses, and protects your personal data.",
     images: ["/opengraph-image"],
   },
@@ -45,8 +45,8 @@ export default function PrivacyPage() {
                 YRT by Novara π (&quot;we&quot;, &quot;our&quot;, &quot;us&quot;) is a growth and revenue marketing agency
                 serving aesthetics clinics, IVF centres, dental practices, and private clinics.
                 Our contact email is{" "}
-                <a href="mailto:hello@novara.com" className="text-[#B07040] hover:underline">
-                  hello@novara.com
+                <a href="mailto:growth@yourevenueteam.com" className="text-[#B07040] hover:underline">
+                  growth@yourevenueteam.com
                 </a>.
               </p>
             </LegalSection>
@@ -76,9 +76,9 @@ export default function PrivacyPage() {
                 We process your personal data under the following legal bases (UK GDPR):
               </p>
               <ul className="list-disc pl-5 space-y-1">
-                <li><strong>Consent</strong> — for marketing communications</li>
-                <li><strong>Legitimate interests</strong> — for responding to enquiries and improving our services</li>
-                <li><strong>Contract</strong> — for delivering services to clients</li>
+                <li><strong>Consent</strong>: for marketing communications</li>
+                <li><strong>Legitimate interests</strong>: for responding to enquiries and improving our services</li>
+                <li><strong>Contract</strong>: for delivering services to clients</li>
               </ul>
             </LegalSection>
 
@@ -116,8 +116,8 @@ export default function PrivacyPage() {
               </ul>
               <p>
                 To exercise any of these rights, email us at{" "}
-                <a href="mailto:hello@novara.com" className="text-[#B07040] hover:underline">
-                  hello@novara.com
+                <a href="mailto:growth@yourevenueteam.com" className="text-[#B07040] hover:underline">
+                  growth@yourevenueteam.com
                 </a>.
               </p>
             </LegalSection>

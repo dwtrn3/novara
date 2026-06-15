@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import clsx from "clsx";
+import { openLeadModal } from "@/lib/leadModalStore";
 
 const LINKS = [
   { label: "Services",    href: "#services" },
@@ -66,12 +67,13 @@ export default function Navbar() {
         {/* Right — CTA + hamburger */}
         <div className="flex items-center gap-4 shrink-0">
           {/* Book a call — desktop */}
-          <a
-            href="#contact"
+          <button
+            type="button"
+            onClick={openLeadModal}
             className="hidden md:inline-flex items-center px-5 py-2 text-[11px] font-sans tracking-widest uppercase border border-[#B07040] text-[#B07040] hover:bg-[#B07040] hover:text-white transition-all duration-300"
           >
             Book a call
-          </a>
+          </button>
 
           {/* Hamburger — mobile */}
           <button
@@ -121,13 +123,16 @@ export default function Navbar() {
             </li>
           ))}
           <li className="pt-5">
-            <a
-              href="#contact"
-              onClick={() => setMenuOpen(false)}
+            <button
+              type="button"
+              onClick={() => {
+                setMenuOpen(false);
+                openLeadModal();
+              }}
               className="inline-flex items-center px-6 py-3 border border-[#B07040] text-[#B07040] text-[11px] font-sans tracking-widest uppercase hover:bg-[#B07040] hover:text-white transition-all duration-300"
             >
               Book a call
-            </a>
+            </button>
           </li>
         </ul>
       </div>

@@ -25,20 +25,10 @@ export default function ResultsSnapshot() {
 
         {/* Header — slides down */}
         <AnimateIn direction="down" distance={16} duration={1200}>
-          <div className="flex items-center justify-between mb-6">
+          <div className="mb-6">
             <p className="font-sans text-xs tracking-[0.2em] uppercase text-[#B07040]">
               Results
             </p>
-            <a
-              href="/results"
-              className="relative group inline-block font-sans text-sm text-neutral-400 hover:text-[#B07040] transition-colors duration-300 pb-0.5"
-            >
-              View all case studies →
-              <span
-                aria-hidden
-                className="absolute bottom-0 left-0 h-px w-0 bg-[#B07040] transition-all duration-300 ease-out group-hover:w-full"
-              />
-            </a>
           </div>
           <div className="border-t border-white/10" />
         </AnimateIn>

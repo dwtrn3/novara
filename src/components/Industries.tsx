@@ -17,14 +17,14 @@ export default function Industries() {
           {/* Image — slides from left */}
           <AnimateIn className="w-full md:flex-1 order-first" direction="right" distance={50} duration={1500}>
             <div
-              className="relative h-[260px] md:h-[540px] w-full rounded-sm overflow-hidden shadow-xl"
+              className="relative w-full max-w-[420px] md:max-w-none mx-auto aspect-[4/5] rounded-sm overflow-hidden shadow-xl"
               style={{ border: "1px solid rgba(176,112,64,0.3)" }}
             >
               <Image
-                src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=900&q=80"
-                alt="Medical clinic interior"
+                src="/who-we-serve.png"
+                alt="Real clinics, real growth: case study snapshot of qualified leads, cost per lead, consultations booked, return on ad spend, revenue generated, and average rating"
                 fill
-                className="object-cover"
+                className="object-contain"
               />
               <div className="absolute inset-0 bg-[#B07040]/4 pointer-events-none" />
             </div>
@@ -47,8 +47,8 @@ export default function Industries() {
               </h2>
               <p className="font-sans text-sm md:text-base leading-relaxed text-neutral-500 mt-4 mb-8">
                 8+ years inside medical aesthetics, fertility, and private
-                clinical practices. We speak your patients&apos; language — and your
-                competitors&apos; weaknesses — before you brief us.
+                clinical practices. We speak your patients&apos; language and your
+                competitors&apos; weaknesses, before you brief us.
               </p>
             </AnimateIn>
 
@@ -61,9 +61,6 @@ export default function Industries() {
                   >
                     <span className="font-serif text-lg font-semibold text-neutral-800 group-hover:text-[#B07040] transition-colors duration-300">
                       {ind.name}
-                    </span>
-                    <span className="text-[#B07040] opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">
-                      →
                     </span>
                   </a>
                 </AnimateIn>

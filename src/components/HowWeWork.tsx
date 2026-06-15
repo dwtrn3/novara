@@ -4,12 +4,12 @@ const STEPS = [
   {
     num: "01",
     title: "Discovery",
-    desc: "We audit your digital presence, map competitor gaps, and set revenue targets — before anything goes live.",
+    desc: "We audit your digital presence, map competitor gaps, and set revenue targets, before anything goes live.",
   },
   {
     num: "02",
     title: "We come to you",
-    desc: "Our team visits your clinic. We shoot everything — photos, video, testimonials. Every creative asset built in-house, on your premises.",
+    desc: "Our team visits your clinic. We shoot everything: photos, video, testimonials. Every creative asset built in-house, on your premises.",
   },
   {
     num: "03",
@@ -42,7 +42,7 @@ export default function HowWeWork() {
             </h2>
             <p className="font-sans text-sm leading-relaxed text-neutral-500 max-w-xs">
               We don&apos;t send monthly reports and go quiet. We sit inside your
-              growth — whether you&apos;re an aesthetics clinic, a fertility centre,
+              growth, whether you&apos;re an aesthetics clinic, a fertility centre,
               a dental practice, or a private clinic. Visible, accountable,
               obsessed with your revenue.
             </p>

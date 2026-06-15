@@ -64,10 +64,10 @@ export default function Footer() {
           YRT by Novara<span className="font-serif text-[20px] text-[#B07040] ml-1.5 normal-case">π</span>
         </span>
         <a
-          href="mailto:hello@novara.com"
+          href="mailto:growth@yourevenueteam.com"
           className="font-sans text-sm text-neutral-400 hover:text-[#B07040] transition-colors duration-300"
         >
-          hello@novara.com
+          growth@yourevenueteam.com
         </a>
       </div>
 
@@ -78,7 +78,7 @@ export default function Footer() {
           {/* Left: tagline + socials */}
           <div className="text-center md:text-left">
             <p className="font-sans text-sm leading-relaxed text-neutral-400 max-w-xs mx-auto md:mx-0">
-              Your extended revenue department — for aesthetics clinics, IVF
+              Your extended revenue department for aesthetics clinics, IVF
               centres, dental practices, and private clinics that want to grow.
             </p>
           </div>
@@ -116,10 +116,10 @@ export default function Footer() {
               Book a Call
             </a>
             <a
-              href="mailto:hello@novara.com"
+              href="mailto:growth@yourevenueteam.com"
               className="font-sans text-sm text-neutral-400 hover:text-[#B07040] transition-colors duration-300 mt-4"
             >
-              hello@novara.com
+              growth@yourevenueteam.com
             </a>
           </div>
         </div>
@@ -139,7 +139,7 @@ export default function Footer() {
 
       {/* ── Bottom bar ── */}
       <div className="max-w-7xl mx-auto px-5 sm:px-8 md:px-16 py-5 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center gap-3">
-        <span className="font-sans text-xs text-neutral-600">© 2025 YRT by Novara π</span>
+        <span className="font-sans text-xs text-neutral-600">© 2026 YRT by Novara π</span>
         <div className="flex gap-5">
           <Link href="/privacy" className="font-sans text-xs text-neutral-600 hover:text-[#B07040] transition-colors duration-300">
             Privacy

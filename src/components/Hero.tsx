@@ -2,36 +2,14 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import { openLeadModal } from "@/lib/leadModalStore";
 
-const LOGOS = [
-  <svg key="aura" height="28" viewBox="0 0 110 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <text x="0" y="21" fontFamily="Georgia, serif" fontSize="18" fontWeight="400" fill="white" letterSpacing="2">AURA</text>
-    <text x="58" y="21" fontFamily="Georgia, serif" fontSize="11" fontWeight="400" fill="white" letterSpacing="1" opacity="0.6">CLINIC</text>
-  </svg>,
-  <svg key="lumiere" height="28" viewBox="0 0 100 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <text x="0" y="20" fontFamily="Georgia, serif" fontSize="16" fontStyle="italic" fontWeight="400" fill="white" letterSpacing="1.5">Lumière</text>
-  </svg>,
-  <svg key="nova" height="28" viewBox="0 0 105 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <circle cx="8" cy="14" r="5" fill="none" stroke="white" strokeWidth="1"/>
-    <circle cx="8" cy="14" r="2" fill="white"/>
-    <text x="20" y="19" fontFamily="system-ui, sans-serif" fontSize="13" fontWeight="500" fill="white" letterSpacing="2">NOVA IVF</text>
-  </svg>,
-  <svg key="revive" height="28" viewBox="0 0 100 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <text x="0" y="18" fontFamily="system-ui, sans-serif" fontSize="14" fontWeight="300" fill="white" letterSpacing="5">REVIVE</text>
-    <line x1="0" y1="23" x2="72" y2="23" stroke="white" strokeWidth="0.5" opacity="0.4"/>
-  </svg>,
-  <svg key="pearl" height="28" viewBox="0 0 120 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <rect x="0" y="10" width="8" height="8" transform="rotate(45 4 14)" fill="none" stroke="white" strokeWidth="1"/>
-    <text x="16" y="19" fontFamily="Georgia, serif" fontSize="13" fontWeight="400" fill="white" letterSpacing="1.5">Pearl Dental</text>
-  </svg>,
-  <svg key="harley" height="28" viewBox="0 0 160 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <text x="0" y="16" fontFamily="system-ui, sans-serif" fontSize="10" fontWeight="500" fill="white" letterSpacing="3">HARLEY STREET</text>
-    <text x="0" y="26" fontFamily="system-ui, sans-serif" fontSize="8" fontWeight="300" fill="white" letterSpacing="4" opacity="0.6">CLINIC</text>
-  </svg>,
-  <svg key="serene" height="28" viewBox="0 0 100 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M6 20 C6 10 14 6 14 6 C14 6 14 16 6 20Z" fill="white" opacity="0.8"/>
-    <text x="20" y="19" fontFamily="Georgia, serif" fontSize="15" fontStyle="italic" fontWeight="400" fill="white" letterSpacing="1">Serene</text>
-  </svg>,
+const INDUSTRIES_TRUST = [
+  "Aesthetics",
+  "IVF & Fertility",
+  "Dental",
+  "Private Clinics",
+  "Multi-Channel Clinics",
 ];
 
 export default function Hero() {
@@ -48,28 +26,31 @@ export default function Hero() {
       {/* ── MOBILE LAYOUT (hidden on md+) ── */}
       <div className="md:hidden relative h-screen min-h-[600px] max-h-[900px] overflow-hidden bg-[#141414]">
 
-        {/* Background image */}
-        <Image
-          src="/images/hero-clinic-shoot.jpg"
-          alt="Novara team filming at an aesthetics clinic"
-          fill
-          className="object-cover"
-          style={{ objectPosition: "center top" }}
-          priority
-          quality={95}
+        {/* Decorative copper glows — replace the background photo on mobile */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute -top-28 -right-20 w-72 h-72 rounded-full blur-3xl"
+          style={{ background: "radial-gradient(circle, rgba(176,112,64,0.28) 0%, rgba(176,112,64,0) 70%)" }}
+        />
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute top-1/3 -left-24 w-64 h-64 rounded-full blur-3xl"
+          style={{ background: "radial-gradient(circle, rgba(176,112,64,0.16) 0%, rgba(176,112,64,0) 70%)" }}
+        />
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute -bottom-32 right-0 w-80 h-80 rounded-full blur-3xl"
+          style={{ background: "radial-gradient(circle, rgba(176,112,64,0.12) 0%, rgba(176,112,64,0) 70%)" }}
         />
 
-        {/* Dark gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#141414]/88 via-[#141414]/78 to-[#141414]/93 z-10" />
-
-        {/* Content overlaid on image — slides up on load */}
+        {/* Content — slides up on load */}
         <div
-          className={`absolute inset-0 z-20 flex flex-col justify-between px-5 pt-20 pb-8 ${
+          className={`relative z-20 flex flex-col h-full px-5 pt-24 pb-8 ${
             animated ? "animate-slideUp" : "opacity-0"
           }`}
         >
           {/* Top: headline + body */}
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col gap-4 shrink-0">
             <p className="font-sans text-xs tracking-[0.2em] text-[#B07040] uppercase">
               Aesthetics · IVF · Dental · Private Clinics
             </p>
@@ -91,27 +72,47 @@ export default function Hero() {
             </p>
           </div>
 
+          {/* Middle: production-shoot photo */}
+          <div className="relative flex-1 min-h-[140px] my-5 rounded-sm overflow-hidden border border-[#F5F2ED]/10">
+            <Image
+              src="/images/hero-clinic-shoot.jpg"
+              alt="Novara team filming a professional content shoot at an aesthetics clinic"
+              fill
+              className="object-cover"
+              style={{ objectPosition: "center top" }}
+              quality={90}
+            />
+            <div className="absolute inset-0 bg-[#B07040]/10 pointer-events-none" />
+          </div>
+
           {/* Bottom: trust bar + CTAs */}
-          <div className="flex flex-col gap-3">
+          <div className="flex flex-col gap-3 shrink-0">
             <div aria-hidden="true" className="w-full h-px bg-[#F5F2ED]/10 mb-1" />
-            <div className="flex items-center gap-3 overflow-hidden mb-1">
-              <span className="font-sans text-[8px] tracking-[0.14em] text-[#F5F2ED]/20 uppercase flex-shrink-0">
-                Trusted by
+            <div className="flex flex-col gap-2 mb-1">
+              <span className="font-sans text-[8px] tracking-[0.14em] text-[#F5F2ED]/30 uppercase">
+                Industries we serve
               </span>
-              {[0, 1, 2].map((i) => (
-                <div
-                  key={i}
-                  className="w-14 h-4 bg-[#F5F2ED]/10 rounded-sm flex-shrink-0"
-                />
-              ))}
+              <div className="overflow-hidden relative w-full">
+                <div className="flex gap-6 items-center animate-marquee whitespace-nowrap w-max">
+                  {[...INDUSTRIES_TRUST, ...INDUSTRIES_TRUST].map((label, i) => (
+                    <span
+                      key={i}
+                      className="font-serif italic text-sm text-[#F5F2ED]/55 whitespace-nowrap shrink-0"
+                    >
+                      {label}
+                    </span>
+                  ))}
+                </div>
+              </div>
             </div>
 
-            <a
-              href="#contact"
+            <button
+              type="button"
+              onClick={openLeadModal}
               className="font-sans bg-[#B07040] text-[#F5F2ED] w-full py-4 text-xs tracking-[0.1em] uppercase text-center"
             >
               Book a discovery call
-            </a>
+            </button>
             <a
               href="#results"
               className="font-sans text-sm text-[#F5F2ED]/60 text-center w-full py-3.5 border border-[#F5F2ED]/20"
@@ -154,12 +155,13 @@ export default function Hero() {
               </p>
 
               <div className="flex flex-wrap items-center gap-6 mt-10">
-                <a
-                  href="#contact"
+                <button
+                  type="button"
+                  onClick={openLeadModal}
                   className="font-sans bg-n-copper text-n-bg px-9 py-4 text-xs tracking-[0.1em] uppercase hover:bg-[#C8834A] transition-colors duration-300"
                 >
                   Book a discovery call
-                </a>
+                </button>
                 <a
                   href="#results"
                   className="font-sans text-sm text-n-bg/40 hover:text-n-bg/80 transition-colors"
@@ -195,16 +197,16 @@ export default function Hero() {
         {/* Desktop trust bar */}
         <div className="border-t border-n-bg/10 py-5 flex items-center gap-12 px-8 md:px-16">
           <span className="font-sans text-[9px] tracking-[0.2em] text-n-bg/25 uppercase whitespace-nowrap shrink-0">
-            Trusted by
+            Industries we serve
           </span>
           <div className="overflow-hidden relative w-full">
             <div className="flex gap-16 items-center animate-marquee whitespace-nowrap w-max">
-              {[...LOGOS, ...LOGOS].map((logo, i) => (
+              {[...INDUSTRIES_TRUST, ...INDUSTRIES_TRUST].map((label, i) => (
                 <span
                   key={i}
-                  className="opacity-60 hover:opacity-90 transition-opacity shrink-0"
+                  className="font-serif italic text-base md:text-lg text-n-bg/60 hover:text-n-bg/90 tracking-wide whitespace-nowrap transition-colors duration-300 shrink-0"
                 >
-                  {logo}
+                  {label}
                 </span>
               ))}
             </div>
